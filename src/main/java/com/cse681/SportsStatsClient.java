@@ -157,8 +157,17 @@ public class SportsStatsClient {
         // Print out the map object to show all NFL teams
         Scanner scanner = new Scanner(System.in);
         System.out.println("NFL teams:");
+        // Define column width
+        int teamWidth = 25;
+        int count=0;
         for (String team : teamMap.keySet()) {
-            System.out.println("- " + team);
+            // Left-align text
+            System.out.printf("%-" + teamWidth + "s", "- " + team);
+            count++;
+            // Move to a new line after every 3 teams
+            if (count % 3 == 0) {
+                System.out.println();
+            }
         }
 
         // try with resources block to automatically close connection and channel
